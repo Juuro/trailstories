@@ -797,7 +797,8 @@ h6 {
     padding: .2em .4em;
     border-radius: .2em;
     text-transform: uppercase;
-    margin-right: .2rem;
+    margin-right: .2em;
+    font-weight: 600;
 }
 
 .post-card-title {
