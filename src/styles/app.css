@@ -791,7 +791,8 @@ h6 {
     line-height: 1.15em;
 }
 
-.post-card-tags span {
+.post-card-tags span,
+.post-card-tags span a {
     color: var(--color-white);
     background-color: var(--color-secondary);
     padding: .2em .4em;
