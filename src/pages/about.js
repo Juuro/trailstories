@@ -6,7 +6,7 @@ import { graphql } from 'gatsby'
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
 
-const AboutPage = ({ data }) => {
+const AboutPage = ({ data, location }) => {
     const author = data.ghostAuthor
 
     return (
