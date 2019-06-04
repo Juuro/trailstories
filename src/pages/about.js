@@ -23,6 +23,7 @@ const AboutPage = ({ data }) => {
                     </div>
                     <article className="content" style={{ textAlign: `center` }}>
                         <h1 className="content-title">About the author</h1>
+                        {author.postCount}
                         <section className="content-body">
                             My (internet) name is Juuro and I love mountainbiking. Since ten years I participate in MTB marathon races and my bike obsession in growing since. I live in south-west Germany. Here we have the Black Forrest and the Swabian Alps to ride and with Albstadt the only Cross Country UCI Worlcup spot in Germany right around the corner.
                         </section>
@@ -40,13 +41,12 @@ AboutPage.propTypes = {
     data: PropTypes.shape({
         ghostAuthor: PropTypes.shape({
             name: PropTypes.string.isRequired,
-            cover_image: PropTypes.string,
             profile_image: PropTypes.string,
             website: PropTypes.string,
-            bio: PropTypes.string,
-            location: PropTypes.string,
-            facebook: PropTypes.string,
             twitter: PropTypes.string,
+            url: PropTypes.string,
+            postCount: PropTypes.int,
+            location: PropTypes.string,
         }),
     }).isRequired,
     location: PropTypes.shape({
@@ -65,6 +65,7 @@ export const pageQuery = graphql`
             url
             website
             name
+            location
         }
     }
 `
