@@ -487,6 +487,10 @@ h6 {
     font-weight: 700;
     text-rendering: optimizeLegibility;
     font-family: var(--font-sans-serif-headings);
+
+    a {
+        color: inherit;
+    }
 }
 
 h1 {
