@@ -789,21 +789,20 @@ h6 {
     margin: 0 0 5px 0;
     font-size: 1.4rem;
     line-height: 1.15em;
-}
+ 
+    span {
+        color: var(--color-white);
+        background-color: var(--color-secondary);
+        padding: .2em .4em;
+        border-radius: .2em;
+        text-transform: uppercase;
+        margin-right: .2em;
+        font-weight: 600;
 
-.post-card-tags span {
-    color: var(--color-white);
-    background-color: var(--color-secondary);
-    padding: .2em .4em;
-    border-radius: .2em;
-    text-transform: uppercase;
-    margin-right: .2em;
-    font-weight: 600;
-}
-
-
-.post-card-tags span a {
-    color: inherit;
+        a {
+            color: inherit;
+        }
+    }
 }
 
 .post-card-title {
