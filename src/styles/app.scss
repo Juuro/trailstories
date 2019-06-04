@@ -19,6 +19,27 @@ what's here to work the way you'd like it to.
 /* Variables
 /* ---------------------------------------------------------- */
 
+@font-face {
+    font-family: "Rubik";
+    src: url("/fonts/Rubik-Bold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Rubik";
+    src: url("/fonts/Rubik-Light.woff2") format("woff2");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Rubik";
+    src: url("/fonts/Rubik-Regular.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+}
+
 :root {
 
     /* Colours */
@@ -30,7 +51,9 @@ what's here to work the way you'd like it to.
     --color-white: #fff;
 
     /* Fonts */
-    --font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    // --font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --font-sans-serif: -system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-sans-serif-headings: Rubik,Lato,"Lucida Grande","Lucida Sans Unicode",Tahoma,Sans-Serif;
     --font-serif: Georgia, Times, serif;
     --font-mono: Menlo, Courier, monospace;
     --font-light: 100;
@@ -160,7 +183,7 @@ img {
 }
 html {
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: var(--font-sans-serif);
 
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -302,7 +325,7 @@ th {
 html {
     overflow-x: hidden;
     overflow-y: scroll;
-    font-size: 62.5%;
+    font-size: 16px;
     background: var(--color-base);
 
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -311,7 +334,7 @@ html {
 body {
     overflow-x: hidden;
     color: #3c484e;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: var(--font-sans-serif);
     font-size: 1.5rem;
     line-height: 1.6em;
     font-weight: 400;
@@ -463,6 +486,7 @@ h6 {
     line-height: 1.15;
     font-weight: 700;
     text-rendering: optimizeLegibility;
+    font-family: var(--font-sans-serif-headings);
 }
 
 h1 {
@@ -470,9 +494,10 @@ h1 {
     font-size: 4rem;
     font-weight: 700;
 }
+
 @media (max-width: 500px) {
     h1 {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 }
 
@@ -554,15 +579,6 @@ h6 {
     width: 100%;
     height: 500px;
     object-fit: cover;
-}
-
-.content-body h1,
-.content-body h2,
-.content-body h3,
-.content-body h4,
-.content-body h5,
-.content-body h6 {
-    font-family: var(--font-sans-serif);
 }
 
 .content-body h1 {
@@ -808,6 +824,14 @@ h6 {
 .post-card-title {
     margin: 0 0 10px 0;
     padding: 0;
+
+    &:hover {
+        background: linear-gradient(to right,#ff8a00,#da1b60);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        box-decoration-break: clone;
+        text-shadow: none;
+    }
 }
 
 .post-card-excerpt {

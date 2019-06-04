@@ -112,6 +112,6 @@ module.exports = {
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-force-trailing-slashes`,
         `gatsby-plugin-offline`,
-        `gatsby-plugin-sass`
+        `gatsby-plugin-sass`,
     ],
 }
