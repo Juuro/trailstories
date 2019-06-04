@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import { Tags } from '@tryghost/helpers-gatsby'
 
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
@@ -13,6 +14,7 @@ import { MetaData } from '../components/common/meta'
 */
 const Post = ({ data, location }) => {
     const post = data.ghostPost
+    const tags = post.tags
 
     return (
             <>
@@ -30,12 +32,15 @@ const Post = ({ data, location }) => {
                                 </figure> : null }
                             <section className="post-full-content">
                                 <h1 className="content-title">{post.title}</h1>
-
                                 {/* The main post content */ }
                                 <section
                                     className="content-body load-external-scripts"
                                     dangerouslySetInnerHTML={{ __html: post.html }}
                                 />
+                                {post.tags && <div className="post-card-tags"> 
+                                    <Tags post={post} visibility="public" autolink={true} permalink="/tag/:slug" separator="" separatorClasses="d-none" />
+                                </div>
+                                }
                             </section>
                         </article>
                     </div>

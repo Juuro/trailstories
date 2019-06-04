@@ -791,8 +791,7 @@ h6 {
     line-height: 1.15em;
 }
 
-.post-card-tags span,
-.post-card-tags span a {
+.post-card-tags span {
     color: var(--color-white);
     background-color: var(--color-secondary);
     padding: .2em .4em;
@@ -800,6 +799,11 @@ h6 {
     text-transform: uppercase;
     margin-right: .2em;
     font-weight: 600;
+}
+
+
+.post-card-tags span a {
+    color: inherit;
 }
 
 .post-card-title {
@@ -1014,4 +1018,8 @@ h6 {
 
 .site-foot-nav-right a:last-child {
     padding-right: 0;
+}
+
+.d-none {
+    display: none;
 }
