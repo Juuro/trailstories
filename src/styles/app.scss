@@ -195,10 +195,13 @@ html {
 }
 a {
     background-color: transparent;
-}
-a:active,
-a:hover {
-    outline: 0;
+    text-decoration: none;
+
+    &:active,
+    &:hover {
+        outline: 0;
+        text-decoration: inherit;
+    }
 }
 b,
 strong {
@@ -469,10 +472,6 @@ blockquote cite a {
 a {
     color: #26a8ed;
     text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
 }
 
 h1,

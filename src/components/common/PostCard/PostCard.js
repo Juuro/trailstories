@@ -14,7 +14,7 @@ const PostCard = ({ post }) => {
         <section className="post-card">
             <header className="post-card-header">
                 <h2 className="post-card-title"><Link to={url}>{post.title}</Link></h2>
-                <div className="post-card-footer-right">
+                <div className="post-card-header-right">
                     <div>{readingTime}</div>
                 </div>
                 {post.featured && <span>Featured</span>}

@@ -13,16 +13,28 @@
     line-height: 1.15em;
  
     span {
-        color: var(--color-white);
-        background-color: var(--color-secondary);
-        padding: .2em .4em;
-        border-radius: .2em;
+        border: 1px solid var(--color-base);
+        color: var(--color-base);
+        background-color: var(--color-white);
+        padding: .5em 1em;
+        border-radius: 2rem;
         text-transform: uppercase;
-        margin-right: .2em;
-        font-weight: 600;
+        margin-right: 1em;
+        font-weight: 700;
+        font-size: .8rem;
+        white-space: nowrap;
+        transition: background .5s ease-in;
 
         a {
             color: inherit;
+        }
+
+        &:hover {
+            background-image: linear-gradient(to right,#f00,#da1b60);
+            border: none;
+            color: var(--color-white);
+            box-shadow: 0 .3em 1em var(--color-base);
+            margin-right: calc(1em + 2px);
         }
     }
 }
@@ -51,6 +63,11 @@
     height: 320px;
     background: var(--color-secondary) no-repeat center center;
     background-size: cover;
+}
+
+.post-card-header-right {
+    font-size: 1rem;
+    line-height: 1;
 }
 
 .post-card-footer {
