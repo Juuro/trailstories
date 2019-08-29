@@ -52,6 +52,7 @@ Tag.propTypes = {
     location: PropTypes.shape({
         pathname: PropTypes.string.isRequired,
     }).isRequired,
+    pageContext: PropTypes.object.isRequired,
 }
 
 export default Tag
