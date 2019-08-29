@@ -23,7 +23,7 @@ const AboutPage = ({ data, location }) => {
                     </div>
                     <article className="content" style={{ textAlign: `center` }}>
                         <h1 className="content-title">About the author</h1>
-                        {author.postCount}
+                        {author.count.posts}
                         <section className="content-body">
                             My (internet) name is Juuro and I love mountainbiking. Since ten years I participate in MTB marathon races and my bike obsession in growing since. I live in south-west Germany. Here we have the Black Forrest and the Swabian Alps to ride and with Albstadt the only Cross Country UCI Worlcup spot in Germany right around the corner.
                         </section>
@@ -45,7 +45,9 @@ AboutPage.propTypes = {
             website: PropTypes.string,
             twitter: PropTypes.string,
             url: PropTypes.string,
-            postCount: PropTypes.int,
+            count: PropTypes.shape({
+                posts: PropTypes.int,
+            }),
             location: PropTypes.string,
         }),
     }).isRequired,
@@ -60,7 +62,9 @@ export const pageQuery = graphql`
     query GhostAboutQuery {
         ghostAuthor(slug: {eq: "juuro"}) {
             profile_image
-            postCount
+            count {
+                posts
+            }
             twitter
             url
             website
