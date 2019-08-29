@@ -54,6 +54,7 @@ Post.propTypes = {
             title: PropTypes.string.isRequired,
             html: PropTypes.string.isRequired,
             feature_image: PropTypes.string,
+            tags: PropTypes.string,
         }).isRequired,
     }).isRequired,
     location: PropTypes.object.isRequired,

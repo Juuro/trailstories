@@ -44,6 +44,7 @@ PostCard.propTypes = {
             })
         ),
         excerpt: PropTypes.string.isRequired,
+        slug: PropTypes.string.isRequired,
     }).isRequired,
 }
 
