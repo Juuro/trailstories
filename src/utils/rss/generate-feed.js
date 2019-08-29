@@ -118,6 +118,7 @@ const generateRSSFeed = function generateRSSFeed(siteConfig) {
         }
   `,
         output: `/rss`,
+        title: `TrailStories`, 
     }
 }
 

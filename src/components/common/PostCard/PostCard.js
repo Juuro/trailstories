@@ -26,7 +26,7 @@ const PostCard = ({ post }) => {
             <section className="post-card-excerpt">{post.excerpt}</section>
             <footer className="post-card-footer">
                 <div className="post-card-footer-left">
-                    {post.tags && <div className="post-card-tags"> <Tags post={post} visibility="public" autolink={true} permalink="/tag/:slug" separator="" separatorClasses="d-none" /></div>}
+                    {post.tags && <div className="post-card-tags"> <Tags post={post} visibility="public" autolink={true} permalink="/tag/:slug" separator="" /></div>}
                 </div>
             </footer>
         </section>
@@ -44,6 +44,7 @@ PostCard.propTypes = {
             })
         ),
         excerpt: PropTypes.string.isRequired,
+        slug: PropTypes.string.isRequired,
     }).isRequired,
 }
 
