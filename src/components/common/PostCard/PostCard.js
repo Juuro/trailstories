@@ -13,6 +13,7 @@ const PostCard = ({ post }) => {
     return (
         <section className="post-card">
             <header className="post-card-header">
+                <span className="post-card-date">{post.created_at}</span>
                 <h2 className="post-card-title"><Link to={url}>{post.title}</Link></h2>
                 <div className="post-card-header-right">
                     <div>{readingTime}</div>
@@ -23,7 +24,10 @@ const PostCard = ({ post }) => {
                         backgroundImage: `url(${post.feature_image})` ,
                     }}></div></Link>}
             </header>
-            <section className="post-card-excerpt">{post.excerpt}</section>
+            <section
+                className="content-body load-external-scripts"
+                dangerouslySetInnerHTML={{ __html: post.html }}
+            />
             <footer className="post-card-footer">
                 <div className="post-card-footer-left">
                     {post.tags && <div className="post-card-tags"> <Tags post={post} visibility="public" autolink={true} permalink="/tag/:slug" separator="" /></div>}
@@ -44,6 +48,7 @@ PostCard.propTypes = {
             })
         ),
         excerpt: PropTypes.string.isRequired,
+        created_at: PropTypes.string.isRequired,
         slug: PropTypes.string.isRequired,
     }).isRequired,
 }

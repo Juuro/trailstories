@@ -65,7 +65,8 @@ export default Post
 export const postQuery = graphql`
     query($slug: String!) {
         ghostPost(slug: { eq: $slug }) {
-            ...GhostPostFields
+            ...GhostPostFields,
+            created_at(formatString: "DD.MM.YYYY")
         }
     }
 `
