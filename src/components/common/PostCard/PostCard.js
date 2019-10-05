@@ -13,7 +13,7 @@ const PostCard = ({ post }) => {
     return (
         <section className="post-card">
             <header className="post-card-header">
-                <span className="post-card-date">{post.created_at}</span>
+                <span className="post-card-date">{post.published_at_pretty}</span>
                 <h2 className="post-card-title"><Link to={url}>{post.title}</Link></h2>
                 <div className="post-card-header-right">
                     <div>{readingTime}</div>
@@ -48,8 +48,9 @@ PostCard.propTypes = {
             })
         ),
         excerpt: PropTypes.string.isRequired,
-        created_at: PropTypes.string.isRequired,
+        published_at_pretty: PropTypes.string.isRequired,
         slug: PropTypes.string.isRequired,
+        html: PropTypes.string.isRequired,
     }).isRequired,
 }
 

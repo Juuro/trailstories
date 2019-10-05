@@ -16,35 +16,35 @@ const Post = ({ data, location }) => {
     const post = data.ghostPost
 
     return (
-            <>
-                <MetaData
-                    data={data}
-                    location={location}
-                    type="article"
-                />
-                <Layout>
-                    <div className="container">
-                        <article className="content">
-                            { post.feature_image ?
-                                <figure className="post-feature-image">
-                                    <img src={ post.feature_image } alt={ post.title } />
-                                </figure> : null }
-                            <section className="post-full-content">
-                                <h1 className="content-title">{post.title}</h1>
-                                {/* The main post content */ }
-                                <section
-                                    className="content-body load-external-scripts"
-                                    dangerouslySetInnerHTML={{ __html: post.html }}
-                                />
-                                {post.tags && <div className="post-card-tags"> 
-                                    <Tags post={post} visibility="public" autolink={true} permalink="/tag/:slug" separator="" separatorClasses="d-none" />
-                                </div>
-                                }
-                            </section>
-                        </article>
-                    </div>
-                </Layout>
-            </>
+        <>
+            <MetaData
+                data={data}
+                location={location}
+                type="article"
+            />
+            <Layout>
+                <div className="container">
+                    <article className="content">
+                        { post.feature_image ?
+                            <figure className="post-feature-image">
+                                <img src={ post.feature_image } alt={ post.title } />
+                            </figure> : null }
+                        <section className="post-full-content">
+                            <h1 className="content-title">{post.title}</h1>
+                            {/* The main post content */ }
+                            <section
+                                className="content-body load-external-scripts"
+                                dangerouslySetInnerHTML={{ __html: post.html }}
+                            />
+                            {post.tags && <div className="post-card-tags"> 
+                                <Tags post={post} visibility="public" autolink={true} permalink="/tag/:slug" separator="" separatorClasses="d-none" />
+                            </div>
+                            }
+                        </section>
+                    </article>
+                </div>
+            </Layout>
+        </>
     )
 }
 
@@ -54,7 +54,7 @@ Post.propTypes = {
             title: PropTypes.string.isRequired,
             html: PropTypes.string.isRequired,
             feature_image: PropTypes.string,
-            tags: PropTypes.string,
+            tags: PropTypes.array,
         }).isRequired,
     }).isRequired,
     location: PropTypes.object.isRequired,
@@ -65,8 +65,7 @@ export default Post
 export const postQuery = graphql`
     query($slug: String!) {
         ghostPost(slug: { eq: $slug }) {
-            ...GhostPostFields,
-            created_at(formatString: "DD.MM.YYYY")
+            ...GhostPostFields
         }
     }
 `
