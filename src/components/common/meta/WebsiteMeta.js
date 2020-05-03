@@ -1,5 +1,5 @@
 import React from 'react'
-import Helmet from "react-helmet"
+import { Helmet } from "react-helmet"
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import url from 'url'
@@ -73,9 +73,16 @@ WebsiteMeta.propTypes = {
         description: PropTypes.string,
         bio: PropTypes.string,
         profile_image: PropTypes.string,
+        meta_description: PropTypes.string,
+        meta_title: PropTypes.string,
+        name: PropTypes.string,
     }).isRequired,
     settings: PropTypes.shape({
         allGhostSettings: PropTypes.object.isRequired,
+        description: PropTypes.string,
+        title: PropTypes.string,
+        twitter: PropTypes.string,
+        logo: PropTypes.string,
     }).isRequired,
     canonical: PropTypes.string.isRequired,
     title: PropTypes.string,
