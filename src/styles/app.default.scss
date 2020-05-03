@@ -42,14 +42,15 @@
   }
 
 html {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 body {
     font-size: 1rem;
-    line-height: 1.3em;
+    line-height: 1.5em;
     font-family: var(--font-sans-serif);
     margin: 0;
+    background-color: var(--color-bg);
 }
 
 a {
@@ -75,7 +76,9 @@ h1 {
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: .5em;
 }
 
 h3 {
@@ -94,24 +97,28 @@ h6 {
     font-size: 1rem;
 }
 
-.post-card-tags a {
-    font-size: .8rem;
-    background-color: var(--color-primary);
-    padding: .2em .5em;
-    color: var(--color-white);
-    text-decoration: none;
-    text-transform: uppercase;
-    margin-right: .5em;
-    border-radius: .3em;
-    transition: box-shadow .2s;
+.post-card-tags {
+    margin-top: 1em;
+    a {
+        font-size: .6rem;
+        opacity: .4;
+        background-color: var(--color-primary);
+        padding: .1em .4em;
+        color: var(--color-white);
+        text-decoration: none;
+        text-transform: uppercase;
+        margin-right: .5em;
+        border-radius: .2em;
+        transition: opacity .2s;
+        letter-spacing: .05em;
 
-    &:hover {
-        box-shadow: 0 0 .3em var(--color-base);
+        &:hover {
+            opacity: 1;
+        }
     }
 }
 
 .site-head {
-    background-color: var(--color-bg);
     padding: 1rem;    
 }
 
@@ -120,9 +127,28 @@ h6 {
 }
 
 .post-card {
-    padding: 1rem;
+    overflow: hidden;
 
-    .post-card-header-right {
+    .post-card-date-reading-time {
+        display: grid;
+        grid-template-columns: 1fr 1fr;	
+        color: var(--color-gray);
         font-size: .8rem;
+
+        .post-card-header-reading-time {
+            text-align: right;
+        }
+    }
+
+    .post-card-main {
+        padding: 1.5rem 1.8rem;
+    }
+    
+    .post-card-image {		
+        margin: 0;		
+        width: auto;		
+        min-height: 200px;
+        background: var(--color-secondary) no-repeat center center;		
+        background-size: cover;
     }
 }

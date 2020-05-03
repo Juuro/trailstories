@@ -11,29 +11,30 @@ const PostCard = ({ post }) => {
     const readingTime = readingTimeHelper(post)
 
     return (
-        <section className="post-card">
-            <header className="post-card-header">
-                <span className="post-card-date">{post.published_at_pretty}</span>
-                <h2 className="post-card-title"><Link to={url}>{post.title}</Link></h2>
-                <div className="post-card-header-right">
-                    <div>{readingTime}</div>
+        <article className="post-card">
+            {post.feature_image &&
+                <Link to={url}><div className="post-card-image" style={{
+                    backgroundImage: `url(${post.feature_image})`,
+                }}></div></Link>}
+            <div className="post-card-main">
+                <header className="post-card-header">
+                    <div className="post-card-header-content">
+                        <div className="post-card-date-reading-time">
+                            <span className="post-card-date">{post.published_at_pretty}</span>
+                            <div className="post-card-header-reading-time">{readingTime}</div>
+                        </div>
+                        <h2 className="post-card-title"><Link to={url}>{post.title}</Link></h2>
+                        {post.featured && <span>Featured</span>}
+                    </div>
+                </header>
+                <section className="post-card-content">{post.excerpt}</section>
+                <footer className="post-card-footer">
+                    <div className="post-card-footer-left">
+                        {post.tags && <div className="post-card-tags"> <Tags post={post} visibility="public" autolink={true} permalink="/tag/:slug" separator="" /></div>}
+                    </div>
+                </footer>
                 </div>
-                {post.featured && <span>Featured</span>}
-                {post.feature_image &&
-                    <Link to={url}><div className="post-card-image" style={{
-                        backgroundImage: `url(${post.feature_image})` ,
-                    }}></div></Link>}
-            </header>
-            <section
-                className="content-body load-external-scripts"
-                dangerouslySetInnerHTML={{ __html: post.html }}
-            />
-            <footer className="post-card-footer">
-                <div className="post-card-footer-left">
-                    {post.tags && <div className="post-card-tags"> <Tags post={post} visibility="public" autolink={true} permalink="/tag/:slug" separator="" /></div>}
-                </div>
-            </footer>
-        </section>
+        </article>
     )
 }
 
