@@ -72,4 +72,4 @@ typings/
 .cache/
 yarn-error.log
 
-public/page-data/
+public/
