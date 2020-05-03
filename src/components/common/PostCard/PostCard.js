@@ -33,7 +33,7 @@ const PostCard = ({ post }) => {
                         {post.tags && <div className="post-card-tags"> <Tags post={post} visibility="public" autolink={true} permalink="/tag/:slug" separator="" /></div>}
                     </div>
                 </footer>
-                </div>
+            </div>
         </article>
     )
 }
