@@ -4,10 +4,10 @@ Trailscast is a frontend for the Ghost blogging platform. It's just a frontend w
 
 Work in progress. Design far from finished right now. Next steps include:
 
-- [ ] Use SCSS.
+- [x] Use SCSS.
 - [ ] Typography.
 - [ ] Remove author at each post.
 - [ ] Add authors page.
 - [ ] Fix tags count.
-- [ ] Fix nesting of a in a at PostCards.
+- [x] Fix nesting of a in a at PostCards.
 - [ ] Netlify redirects?
