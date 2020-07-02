@@ -10,7 +10,7 @@
     "url": "git+https://github.com/Juuro/trailscast.git"
   },
   "engines": {
-    "node": "12.x"
+    "node": "13.x"
   },
   "bugs": {
     "url": "https://github.com/Juuro/trailscast/issues"
