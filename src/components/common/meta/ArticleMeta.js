@@ -143,6 +143,11 @@ ArticleMetaGhost.propTypes = {
     }).isRequired,
     settings: PropTypes.shape({
         allGhostSettings: PropTypes.object.isRequired,
+        logo: PropTypes.string.isRequired,
+        twitter: PropTypes.shape({
+            replace: PropTypes.func.isRequired,
+        }),
+        title: PropTypes.string.isRequired,
     }).isRequired,
     canonical: PropTypes.string.isRequired,
 }
