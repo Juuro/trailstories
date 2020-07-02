@@ -1,0 +1,44 @@
+@media (min-width: 768px) {
+    .viewport {
+        width: 100%;
+        max-width: 1220px;
+        margin: 0 auto;
+        padding: 80px 60px;
+    }
+
+    .site-banner-title {
+        font-size: 4rem;
+    }
+
+    .post-feed {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 2rem;
+        grid-auto-flow: dense;
+
+        /* Extra-wide grid-posts */
+        article:nth-child(31n + 1) {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1.9fr 1fr;	
+
+            .post-card-main {
+                padding: 1.8rem 2.2rem;
+            }
+
+            .post-card-image {
+                height: 100%;
+            }
+        }
+
+        article {
+            border-radius: 4px;
+            background-color: #fff;
+            transition: box-shadow .2s;
+
+            &:hover {
+                box-shadow: rgba(13, 13, 18, 0.04) 0px 8px 24px 0px;
+            }
+        }
+    }
+}
