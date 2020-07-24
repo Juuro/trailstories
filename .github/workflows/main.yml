@@ -5,7 +5,7 @@ jobs:
   lighthouse-check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@main
       - run: mkdir /tmp/artifacts
       - name: Run Lighthouse
         uses: foo-software/lighthouse-check-action@master
@@ -14,9 +14,9 @@ jobs:
           author: ${{ github.actor }}
           branch: ${{ github.ref }}
           outputDirectory: /tmp/artifacts
-          urls: 'https://www.trailstories.net'
+          urls: 'https://trailstories.net/'
       - name: Upload artifacts
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@main
         with:
           name: Lighthouse reports
           path: /tmp/artifacts
