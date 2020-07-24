@@ -7,6 +7,10 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - run: mkdir /tmp/artifacts
+      - name: Wait for Netlify Deploy
+        uses: mskelton/wait-for-netlify-action@v1
+        with:
+          site_name: naughty-euclid-aa5edb
       - name: Run Lighthouse
         uses: foo-software/lighthouse-check-action@master
         with:
@@ -14,7 +18,7 @@ jobs:
           author: ${{ github.actor }}
           branch: ${{ github.ref }}
           outputDirectory: /tmp/artifacts
-          urls: 'https://deploy-preview-30--naughty-euclid-aa5edb.netlify.app/'
+          urls: ${{ steps.wait-for-netflify.outputs.url }}
       - name: Upload artifacts
         uses: actions/upload-artifact@main
         with:
