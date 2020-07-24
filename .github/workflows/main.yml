@@ -8,11 +8,13 @@ jobs:
       - uses: actions/checkout@main
       - run: mkdir /tmp/artifacts
       - name: Waiting for Netlify Preview
-        uses: josephduffy/wait-for-netlify-action@v1
+        uses: kamranayub/wait-for-netlify-action@2.0.0
         id: wait-for-netflify-preview
         with:
           site_name: "naughty-euclid-aa5edb"
           max_timeout: 60
+        env:
+          NETLIFY_TOKEN: ${{secrets.NETLIFY_TOKEN}}
       - name: Run Lighthouse
         uses: foo-software/lighthouse-check-action@master
         with:
