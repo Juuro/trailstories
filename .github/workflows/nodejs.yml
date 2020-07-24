@@ -10,5 +10,7 @@ jobs:
         node-version: '13'
     - name: Install modules
       run: yarn
-    - name: Run linter
-      run: yarn lint
+    - name: Linter
+      run: yarn lint  
+    - name: Lighthouse Check
+      uses: foo-software/lighthouse-check-action@v2.0.2
