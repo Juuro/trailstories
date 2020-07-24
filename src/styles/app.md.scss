@@ -34,10 +34,13 @@
         article {
             border-radius: 4px;
             background-color: #fff;
-            transition: box-shadow .2s;
+            transition-property: box-shadow, transform;
+            transition-duration: .2s;
+            transition-timing-function: ease-out;
 
             &:hover {
                 box-shadow: rgba(13, 13, 18, 0.04) 0px 8px 24px 0px;
+                transform: scale(1.01);
             }
         }
     }
