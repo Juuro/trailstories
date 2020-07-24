@@ -11,6 +11,4 @@ jobs:
     - name: Install modules
       run: yarn
     - name: Linter
-      run: yarn lint  
-    - name: Lighthouse Check
-      uses: foo-software/lighthouse-check-action@v2.0.2
+      run: yarn lint
