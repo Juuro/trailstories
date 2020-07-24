@@ -10,7 +10,7 @@ jobs:
       - name: Wait for Netlify Deploy
         uses: mskelton/wait-for-netlify-action@v1
         with:
-          site_name: naughty-euclid-aa5edb
+          site_name: "naughty-euclid-aa5edb"
       - name: Run Lighthouse
         uses: foo-software/lighthouse-check-action@master
         with:
