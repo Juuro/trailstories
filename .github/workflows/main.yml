@@ -14,7 +14,7 @@ jobs:
           author: ${{ github.actor }}
           branch: ${{ github.ref }}
           outputDirectory: /tmp/artifacts
-          urls: 'https://trailstories.net/'
+          urls: 'https://deploy-preview-30--naughty-euclid-aa5edb.netlify.app/'
       - name: Upload artifacts
         uses: actions/upload-artifact@main
         with:
