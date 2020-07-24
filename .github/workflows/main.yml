@@ -12,7 +12,7 @@ jobs:
         id: wait-for-netflify-preview
         with:
           site_name: "naughty-euclid-aa5edb"
-          max_timeout: 60
+          max_timeout: 300
         env:
           NETLIFY_TOKEN: ${{secrets.NETLIFY_TOKEN}}
       - name: Run Lighthouse
