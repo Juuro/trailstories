@@ -70,12 +70,13 @@ h1,
 h2 {
     font-family: var(--font-sans-serif-headings);
     font-weight: bold;
-    line-height: 1.3em;
+    line-height: 1em;
     color: var(--color-primary);
 }
 
 h1 {
     font-size: 3rem;
+    margin-top: 0;
 }
 
 h2 {
@@ -98,6 +99,21 @@ h5 {
 
 h6 {
     font-size: 1rem;
+}
+
+.cover-image {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    height: 10rem;
+    max-height: 30rem;
+}
+
+.site-banner {
+    padding: 1rem;
+    position: relative;
+    margin-top: -5.5rem;
+    background-color: var(--color-bg);
 }
 
 .post-card-tags {
