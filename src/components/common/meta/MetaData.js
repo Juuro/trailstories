@@ -37,7 +37,7 @@ const MetaData = ({
             <WebsiteMeta
                 data={ghostTag}
                 canonical={canonical}
-                type="Series"
+                type='Series'
             />
         )
     } else if (ghostAuthor) {
@@ -52,7 +52,7 @@ const MetaData = ({
             <WebsiteMeta
                 data={ghostPage}
                 canonical={canonical}
-                type="WebSite"
+                type='WebSite'
             />
         )
     } else {
@@ -67,7 +67,7 @@ const MetaData = ({
                 title={title}
                 description={description}
                 image={image}
-                type="WebSite"
+                type='WebSite'
             />
         )
     }

@@ -19,19 +19,19 @@ const AuthorMeta = ({ data, settings, canonical }) => {
         <>
             <Helmet>
                 <title>{title}</title>
-                <meta name="description" content={description} />
-                <link rel="canonical" href={canonical} />
-                <meta property="og:site_name" content={settings.title} />
-                <meta property="og:type" content="profile" />
-                <meta property="og:title" content={title} />
-                <meta property="og:description" content={description} />
-                <meta property="og:url" content={canonical} />
-                <meta name="twitter:title" content={title} />
-                <meta name="twitter:description" content={description} />
-                <meta name="twitter:url" content={canonical} />
-                {settings.twitter && <meta name="twitter:site" content={`https://twitter.com/${settings.twitter.replace(/^@/, ``)}/`} />}
-                {settings.twitter && <meta name="twitter:creator" content={settings.twitter} />}
-                <script type="application/ld+json">{`
+                <meta name='description' content={description} />
+                <link rel='canonical' href={canonical} />
+                <meta property='og:site_name' content={settings.title} />
+                <meta property='og:type' content='profile' />
+                <meta property='og:title' content={title} />
+                <meta property='og:description' content={description} />
+                <meta property='og:url' content={canonical} />
+                <meta name='twitter:title' content={title} />
+                <meta name='twitter:description' content={description} />
+                <meta name='twitter:url' content={canonical} />
+                {settings.twitter && <meta name='twitter:site' content={`https://twitter.com/${settings.twitter.replace(/^@/, ``)}/`} />}
+                {settings.twitter && <meta name='twitter:creator' content={settings.twitter} />}
+                <script type='application/ld+json'>{`
                     {
                         "@context": "https://schema.org/",
                         "@type": "Person,

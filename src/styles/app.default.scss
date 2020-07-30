@@ -70,12 +70,13 @@ h1,
 h2 {
     font-family: var(--font-sans-serif-headings);
     font-weight: bold;
-    line-height: 1.3em;
+    line-height: 1em;
     color: var(--color-primary);
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2rem;
+    margin-top: 0;
 }
 
 h2 {
@@ -100,6 +101,36 @@ h6 {
     font-size: 1rem;
 }
 
+.cover-image {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    height: 10rem;
+    max-height: 30rem;
+}
+
+.site-head {
+    padding: 1.5rem 1.8rem 0;    
+    &:empty {
+        display: none;
+    }
+
+    .container {
+        padding: 1rem;
+        position: relative;
+        margin-top: -5.5rem;
+        background-color: var(--color-bg);
+
+        &:empty {
+            display: none;
+        }
+    }
+}
+
+.site-nav-icon {
+    width: 2rem;
+}
+
 .post-card-tags {
     margin-top: 1em;
     a {
@@ -119,14 +150,6 @@ h6 {
             opacity: 1;
         }
     }
-}
-
-.site-head {
-    padding: 1rem;    
-}
-
-.site-nav-icon {
-    width: 2rem;
 }
 
 .post-card {
@@ -154,4 +177,18 @@ h6 {
         background: var(--color-secondary) no-repeat center center;		
         background-size: cover;
     }
+}
+
+.post-feature-image  {
+    margin:  0 -1.8rem;
+
+    img {
+        width: 100%;
+        max-width: 100vw;
+    }
+}
+
+.post-full-content,
+.viewport-bottom {
+    padding: 1.5rem 1.8rem;
 }

@@ -13,20 +13,20 @@ const AboutPage = ({ data, location }) => {
             <MetaData
                 data={data}
                 location={location}
-                type="profile"
+                type='profile'
             />
             <Layout>
-                <div className="container">
-                    <div className="author-header-image">
+                <div className='container'>
+                    <div className='author-header-image'>
                         {author.profile_image && <img src={author.profile_image} alt={author.name} />}
                     </div>
-                    <article className="content" style={{ textAlign: `center` }}>
-                        <h1 className="content-title">About the author</h1>
+                    <article className='content' style={{ textAlign: `center` }}>
+                        <h1 className='content-title'>About the author</h1>
                         {author.postCount}
-                        <section className="content-body">
+                        <section className='content-body'>
                             My (internet) name is Juuro and I love mountainbiking. Since ten years I participate in MTB marathon races and my bike obsession in growing since. I live in south-west Germany. Here we have the Black Forrest and the Swabian Alps to ride and with Albstadt the only Cross Country UCI Worlcup spot in Germany right around the corner.
                         </section>
-                        <section className="content-body">
+                        <section className='content-body'>
                             With this blog I try to canalise my thoughts about cycling in gerneral. But it will be MTB dominated.
                         </section>
                     </article>
