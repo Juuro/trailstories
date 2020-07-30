@@ -1,14 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
-import { Link, StaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
+import React from "react"
+import PropTypes from "prop-types"
+import { Helmet } from "react-helmet"
+import { Link, StaticQuery, graphql } from "gatsby"
 
-import { Navigation } from ".";
-import config from "../../utils/siteConfig";
+import { Navigation } from "."
 
 // Styles
-import "../../styles/app.scss";
+import "../../styles/app.scss"
 
 /**
  * Main layout component
@@ -19,13 +17,13 @@ import "../../styles/app.scss";
  *
  */
 const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
-    const site = data.allGhostSettings.edges[0].node;
+    const site = data.allGhostSettings.edges[0].node
     const twitterUrl = site.twitter
         ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}`
-        : null;
+        : null
     const facebookUrl = site.facebook
         ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}`
-        : null;
+        : null
 
     return (
         <>
@@ -34,25 +32,25 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 <body className={bodyClass} />
             </Helmet>
 
-            <Link to="/">
+            <Link to='/'>
                 <img
                     src={site.cover_image}
-                    alt="Cover Image"
-                    className="cover-image"
+                    alt='Cover Image'
+                    className='cover-image'
                 />
             </Link>
 
-            <div className="viewport">
-                <div className="viewport-top">
+            <div className='viewport'>
+                <div className='viewport-top'>
                     {/* The main header section on top of the screen */}
-                    <header className="site-head">
-                        <div className="container">
+                    <header className='site-head'>
+                        <div className='container'>
                             {isHome ? (
-                                <div className="site-banner">
-                                    <h1 className="site-banner-title">
+                                <div className='site-banner'>
+                                    <h1 className='site-banner-title'>
                                         {site.title}
                                     </h1>
-                                    <p className="site-banner-desc">
+                                    <p className='site-banner-desc'>
                                         {site.description}
                                     </p>
                                 </div>
@@ -60,46 +58,46 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                         </div>
                     </header>
 
-                    <main className="site-main">
+                    <main className='site-main'>
                         {/* All the main content gets inserted here, index.js, post.js */}
                         {children}
                     </main>
                 </div>
 
-                <div className="viewport-bottom">
-                    <nav className="site-nav">
-                        <div className="site-nav-left">
+                <div className='viewport-bottom'>
+                    <nav className='site-nav'>
+                        <div className='site-nav-left'>
                             {/* The navigation items as setup in Ghost */}
                             <Navigation
                                 data={site.navigation}
-                                navClass="site-nav-item"
+                                navClass='site-nav-item'
                             />
                         </div>
-                        <div className="site-nav-right">
-                            <Link className="site-nav-button" to="/about">
+                        <div className='site-nav-right'>
+                            <Link className='site-nav-button' to='/about'>
                                 About
                             </Link>
                         </div>
                     </nav>
                     {/* The footer at the very bottom of the screen */}
-                    <footer className="site-foot">
-                        <div className="site-foot-nav container">
-                            <div className="site-foot-nav-left">
-                                <Link to="/">{site.title}</Link> © 2019 &mdash;
-                                Published with{" "}
+                    <footer className='site-foot'>
+                        <div className='site-foot-nav container'>
+                            <div className='site-foot-nav-left'>
+                                <Link to='/'>{site.title}</Link> © 2019 &mdash;
+                                Published with{` `}
                                 <a
-                                    className="site-foot-nav-item"
-                                    href="https://ghost.org"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                    className='site-foot-nav-item'
+                                    href='https://ghost.org'
+                                    target='_blank'
+                                    rel='noopener noreferrer'
                                 >
                                     Ghost
                                 </a>
                             </div>
-                            <div className="site-foot-nav-right">
+                            <div className='site-foot-nav-right'>
                                 <Navigation
                                     data={site.navigation}
-                                    navClass="site-foot-nav-item"
+                                    navClass='site-foot-nav-item'
                                 />
                             </div>
                         </div>
@@ -107,8 +105,8 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 </div>
             </div>
         </>
-    );
-};
+    )
+}
 
 DefaultLayout.propTypes = {
     children: PropTypes.node.isRequired,
@@ -122,9 +120,9 @@ DefaultLayout.propTypes = {
             }),
         }),
     }).isRequired,
-};
+}
 
-const DefaultLayoutSettingsQuery = (props) => (
+const DefaultLayoutSettingsQuery = props => (
     <StaticQuery
         query={graphql`
             query GhostSettings {
@@ -144,8 +142,8 @@ const DefaultLayoutSettingsQuery = (props) => (
                 }
             }
         `}
-        render={(data) => <DefaultLayout data={data} {...props} />}
+        render={data => <DefaultLayout data={data} {...props} />}
     />
-);
+)
 
-export default DefaultLayoutSettingsQuery;
+export default DefaultLayoutSettingsQuery
