@@ -25,54 +25,54 @@ const ArticleMetaGhost = ({ data, settings, canonical }) => {
         <>
             <Helmet>
                 <title>{ghostPost.meta_title || ghostPost.title}</title>
-                <meta name="description" content={ghostPost.meta_description || ghostPost.excerpt} />
-                <link rel="canonical" href={canonical} />
+                <meta name='description' content={ghostPost.meta_description || ghostPost.excerpt} />
+                <link rel='canonical' href={canonical} />
 
-                <meta property="og:site_name" content={settings.title} />
-                <meta name="og:type" content="article" />
-                <meta name="og:title"
+                <meta property='og:site_name' content={settings.title} />
+                <meta name='og:type' content='article' />
+                <meta name='og:title'
                     content={
                         ghostPost.og_title ||
                         ghostPost.meta_title ||
                         ghostPost.title
                     }
                 />
-                <meta name="og:description"
+                <meta name='og:description'
                     content={
                         ghostPost.og_description ||
                         ghostPost.excerpt ||
                         ghostPost.meta_description
                     }
                 />
-                <meta property="og:url" content={canonical} />
-                <meta property="article:published_time" content={ghostPost.published_at} />
-                <meta property="article:modified_time" content={ghostPost.updated_at} />
-                {publicTags.map((keyword, i) => (<meta property="article:tag" content={keyword} key={i} />))}
-                {author.facebookUrl && <meta property="article:author" content={author.facebookUrl} />}
+                <meta property='og:url' content={canonical} />
+                <meta property='article:published_time' content={ghostPost.published_at} />
+                <meta property='article:modified_time' content={ghostPost.updated_at} />
+                {publicTags.map((keyword, i) => (<meta property='article:tag' content={keyword} key={i} />))}
+                {author.facebookUrl && <meta property='article:author' content={author.facebookUrl} />}
 
-                <meta name="twitter:title"
+                <meta name='twitter:title'
                     content={
                         ghostPost.twitter_title ||
                         ghostPost.meta_title ||
                         ghostPost.title
                     }
                 />
-                <meta name="twitter:description"
+                <meta name='twitter:description'
                     content={
                         ghostPost.twitter_description ||
                         ghostPost.excerpt ||
                         ghostPost.meta_description
                     }
                 />
-                <meta name="twitter:url" content={canonical} />
-                <meta name="twitter:label1" content="Written by" />
-                <meta name="twitter:data1" content={author.name} />
-                {primaryTag && <meta name="twitter:label2" content="Filed under" />}
-                {primaryTag && <meta name="twitter:data2" content={primaryTag} />}
+                <meta name='twitter:url' content={canonical} />
+                <meta name='twitter:label1' content='Written by' />
+                <meta name='twitter:data1' content={author.name} />
+                {primaryTag && <meta name='twitter:label2' content='Filed under' />}
+                {primaryTag && <meta name='twitter:data2' content={primaryTag} />}
 
-                {settings.twitter && <meta name="twitter:site" content={`https://twitter.com/${settings.twitter.replace(/^@/, ``)}/`} />}
-                {settings.twitter && <meta name="twitter:creator" content={settings.twitter} />}
-                <script type="application/ld+json">{`
+                {settings.twitter && <meta name='twitter:site' content={`https://twitter.com/${settings.twitter.replace(/^@/, ``)}/`} />}
+                {settings.twitter && <meta name='twitter:creator' content={settings.twitter} />}
+                <script type='application/ld+json'>{`
                     {
                         "@context": "https://schema.org/",
                         "@type": "Article",
