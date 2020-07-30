@@ -1,4 +1,8 @@
 @media (min-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
     .viewport {
         width: 100%;
         max-width: 1220px;
@@ -6,14 +10,19 @@
         padding: 80px 60px;
     }
 
-    .cover-image {
-        height: 20rem;
+    .site-head {
+        padding: 1.5rem 1rem;
+
+        .container {
+            margin-left: -1rem;
+            margin-right: -1rem;
+            margin-top: -11rem;
+        }
+
     }
 
-    .site-banner {
-        margin-left: -1rem;
-        margin-right: -1rem;
-        margin-top: -11rem;
+    .cover-image {
+        height: 20rem;
     }
 
     .site-banner-title {

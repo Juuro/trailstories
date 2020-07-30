@@ -17,35 +17,42 @@ const Post = ({ data, location }) => {
 
     return (
         <>
-            <MetaData
-                data={data}
-                location={location}
-                type="article"
-            />
+            <MetaData data={data} location={location} type="article" />
             <Layout>
                 <div className="container">
                     <article className="content">
-                        { post.feature_image ?
-                            <figure className="post-feature-image">
-                                <img src={ post.feature_image } alt={ post.title } />
-                            </figure> : null }
                         <section className="post-full-content">
                             <h1 className="content-title">{post.title}</h1>
-                            {/* The main post content */ }
+                            {post.feature_image ? (
+                                <figure className="post-feature-image">
+                                    <img
+                                        src={post.feature_image}
+                                        alt={post.title}
+                                    />
+                                </figure>
+                            ) : null}
                             <section
                                 className="content-body load-external-scripts"
                                 dangerouslySetInnerHTML={{ __html: post.html }}
                             />
-                            {post.tags && <div className="post-card-tags"> 
-                                <Tags post={post} visibility="public" autolink={true} permalink="/tag/:slug" separator="" separatorClasses="d-none" />
-                            </div>
-                            }
+                            {post.tags && (
+                                <div className="post-card-tags">
+                                    <Tags
+                                        post={post}
+                                        visibility="public"
+                                        autolink={true}
+                                        permalink="/tag/:slug"
+                                        separator=""
+                                        separatorClasses="d-none"
+                                    />
+                                </div>
+                            )}
                         </section>
                     </article>
                 </div>
             </Layout>
         </>
-    )
+    );
 }
 
 Post.propTypes = {

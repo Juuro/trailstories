@@ -75,7 +75,7 @@ h2 {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     margin-top: 0;
 }
 
@@ -109,11 +109,26 @@ h6 {
     max-height: 30rem;
 }
 
-.site-banner {
-    padding: 1rem;
-    position: relative;
-    margin-top: -5.5rem;
-    background-color: var(--color-bg);
+.site-head {
+    padding: 1.5rem 1.8rem 0;    
+    &:empty {
+        display: none;
+    }
+
+    .container {
+        padding: 1rem;
+        position: relative;
+        margin-top: -5.5rem;
+        background-color: var(--color-bg);
+
+        &:empty {
+            display: none;
+        }
+    }
+}
+
+.site-nav-icon {
+    width: 2rem;
 }
 
 .post-card-tags {
@@ -135,14 +150,6 @@ h6 {
             opacity: 1;
         }
     }
-}
-
-.site-head {
-    padding: 1rem;    
-}
-
-.site-nav-icon {
-    width: 2rem;
 }
 
 .post-card {
@@ -170,4 +177,18 @@ h6 {
         background: var(--color-secondary) no-repeat center center;		
         background-size: cover;
     }
+}
+
+.post-feature-image  {
+    margin:  0 -1.8rem;
+
+    img {
+        width: 100%;
+        max-width: 100vw;
+    }
+}
+
+.post-full-content,
+.viewport-bottom {
+    padding: 1.5rem 1.8rem;
 }
