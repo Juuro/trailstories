@@ -8,7 +8,7 @@ jobs:
       - uses: actions/checkout@main
       - run: mkdir /tmp/artifacts
       - name: Waiting for Netlify Preview
-        uses: kamranayub/wait-for-netlify-action@2.0.0
+        uses: kamranayub/wait-for-netlify-action@2.0.3
         id: wait-for-netflify-preview
         with:
           site_name: "naughty-euclid-aa5edb"
