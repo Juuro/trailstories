@@ -72,6 +72,9 @@ h2 {
     font-weight: bold;
     line-height: 1em;
     color: var(--color-primary);
+    background: linear-gradient(var(--color-primary), var(--color-primary-active));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h1 {
@@ -135,7 +138,7 @@ h6 {
 
 .post-card-tags {
     margin-top: 1em;
-    
+
     a {
         font-size: .6rem;
         opacity: .4;
@@ -194,4 +197,8 @@ h6 {
 .post-full-content,
 .viewport-bottom {
     padding: 1.5rem 1.8rem;
+}
+
+.text-center {
+    text-align: center;
 }

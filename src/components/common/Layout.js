@@ -37,10 +37,10 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
             <div className='viewport'>
                 <div className='viewport-top'>
                     {/* The main header section on top of the screen */}
-                    <header className='site-head'>
-                        <div className='container'>
-                            {isHome ? (
-                                <div className='site-banner'>
+                    {isHome ? (
+                        <header className='site-head'>
+                            <div className='container'>
+                                <div className='site-banner text-center'>
                                     <h1 className='site-banner-title'>
                                         {site.title}
                                     </h1>
@@ -48,9 +48,9 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                         {site.description}
                                     </p>
                                 </div>
-                            ) : null}
-                        </div>
-                    </header>
+                            </div>
+                        </header>
+                    ) : null}
 
                     <main className='site-main'>
                         {/* All the main content gets inserted here, index.js, post.js */}
