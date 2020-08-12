@@ -13,9 +13,14 @@ const PostCard = ({ post }) => {
     return (
         <article className='post-card'>
             {post.feature_image &&
-                <Link to={url}><div className='post-card-image' style={{
-                    backgroundImage: `url(${post.feature_image})`,
-                }}></div></Link>}
+                <Link to={url}>
+                    <img
+                        className='post-card-image'
+                        src={post.feature_image}
+                        alt={post.title}
+                        loading='lazy'
+                    />    
+                </Link>}
             <div className='post-card-main'>
                 <header className='post-card-header'>
                     <div className='post-card-header-content'>
