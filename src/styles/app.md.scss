@@ -35,7 +35,6 @@
         grid-gap: 2rem;
         grid-auto-flow: dense;
 
-        /* Extra-wide grid-posts */
         article:nth-child(31n + 1) {
             grid-column: 1 / -1;
             display: grid;
@@ -47,6 +46,7 @@
 
             .post-card-image {
                 height: 100%;
+                min-height: 350px;
             }
         }
 

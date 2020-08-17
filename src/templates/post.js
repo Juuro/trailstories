@@ -28,6 +28,7 @@ const Post = ({ data, location }) => {
                                     <img
                                         src={post.feature_image}
                                         alt={post.title}
+                                        loading='lazy'
                                     />
                                 </figure>
                             ) : null}
