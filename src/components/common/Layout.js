@@ -110,7 +110,7 @@ DefaultLayout.propTypes = {
         allGhostSettings: PropTypes.object.isRequired,
         file: PropTypes.shape({
             childImageSharp: PropTypes.shape({
-                fixed: PropTypes.string,
+                fixed: PropTypes.object,
             }),
         }),
     }).isRequired,
