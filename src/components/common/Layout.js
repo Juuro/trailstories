@@ -16,44 +16,19 @@ import "../../styles/app.scss"
  * styles, and meta data for each page.
  *
  */
-const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
+const DefaultLayout = ({ data, children, isHome }) => {
     const site = data.allGhostSettings.edges[0].node
 
     return (
         <>
             <Helmet>
                 <html lang={site.lang} />
-                <body className={bodyClass} />
+                <body className={isHome ? `homepage` : null} />
             </Helmet>
-
-            <Link to='/'>
-                <img
-                    src={site.cover_image}
-                    alt='Cover Image'
-                    className='cover-image'
-                />
-            </Link>
 
             <div className='viewport'>
                 <div className='viewport-top'>
-                    {/* The main header section on top of the screen */}
-                    {isHome ? (
-                        <header className='site-head'>
-                            <div className='container'>
-                                <div className='site-banner text-center'>
-                                    <h1 className='site-banner-title'>
-                                        {site.title}
-                                    </h1>
-                                    <p className='site-banner-desc'>
-                                        {site.description}
-                                    </p>
-                                </div>
-                            </div>
-                        </header>
-                    ) : null}
-
                     <main className='site-main'>
-                        {/* All the main content gets inserted here, index.js, post.js */}
                         {children}
                     </main>
                 </div>

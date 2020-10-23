@@ -3,11 +3,17 @@
         font-size: 4rem;
     }
 
+    .homepage {
+        .viewport {
+            max-width: 1220px;
+        }
+    }
+
     .viewport {
         width: 100%;
-        max-width: 1220px;
+        max-width: 900px;
         margin: 0 auto;
-        padding: 80px 60px;
+        padding: 2rem;
     }
 
     .site-head {
@@ -23,6 +29,7 @@
 
     .cover-image {
         height: 20rem;
+        margin-bottom: 2rem;
     }
 
     .site-banner-title {
