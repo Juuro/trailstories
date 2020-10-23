@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import { Tags } from '@tryghost/helpers-gatsby'
 
 import { Layout } from '../components/common'
@@ -14,11 +14,19 @@ import { MetaData } from '../components/common/meta'
 */
 const Post = ({ data, location }) => {
     const post = data.ghostPost
+    const site = data.allGhostSettings.edges[0].node
 
     return (
         <>
             <MetaData data={data} location={location} type='article' />
-            <Layout>
+
+            <header>
+                <div className='viewport'>
+                    <Link to='/'>{site.title}</Link>
+                </div>
+            </header>
+
+            <Layout bodyClass={post.slug} isHome={false}>
                 <div className='container'>
                     <article className='content'>
                         <section className='post-full-content'>
@@ -58,11 +66,19 @@ const Post = ({ data, location }) => {
 
 Post.propTypes = {
     data: PropTypes.shape({
+        allGhostSettings: PropTypes.shape({
+            edges: PropTypes.shape([{
+                node: PropTypes.shape({
+                    title: PropTypes.string.isRequired,
+                }),
+            }]),
+        }),
         ghostPost: PropTypes.shape({
             title: PropTypes.string.isRequired,
             html: PropTypes.string.isRequired,
             feature_image: PropTypes.string,
             tags: PropTypes.array,
+            slug: PropTypes.string,
         }).isRequired,
     }).isRequired,
     location: PropTypes.object.isRequired,
@@ -72,6 +88,13 @@ export default Post
 
 export const postQuery = graphql`
     query($slug: String!) {
+        allGhostSettings {
+            edges {
+                node {
+                    title
+                }
+            }
+        }
         ghostPost(slug: { eq: $slug }) {
             ...GhostPostFields
         }
