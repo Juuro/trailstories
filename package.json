@@ -33,7 +33,7 @@
     "eslint-plugin-ghost": "1.5.0",
     "eslint-plugin-react": "7.20.6",
     "gatsby-plugin-sass": "^2.3.12",
-    "node-sass": "^4.12.0"
+    "node-sass": "^7.0.0"
   },
   "dependencies": {
     "@tryghost/helpers": "1.1.30",
