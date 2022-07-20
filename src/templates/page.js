@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
@@ -13,6 +13,7 @@ import { MetaData } from '../components/common/meta'
 */
 const Page = ({ data, location }) => {
     const page = data.ghostPage
+    const site = data.allGhostSettings.edges[0].node
 
     return (
         <>
@@ -21,6 +22,13 @@ const Page = ({ data, location }) => {
                 location={location}
                 type='website'
             />
+
+            <header>
+                <div className='viewport'>
+                    <Link to='/'>{site.title}</Link>
+                </div>
+            </header>
+
             <Layout>
                 <div className='container'>
                     <article className='content'>
@@ -39,6 +47,13 @@ const Page = ({ data, location }) => {
 
 Page.propTypes = {
     data: PropTypes.shape({
+        allGhostSettings: PropTypes.shape({
+            edges: PropTypes.shape([{
+                node: PropTypes.shape({
+                    title: PropTypes.string.isRequired,
+                }),
+            }]),
+        }),
         ghostPage: PropTypes.shape({
             title: PropTypes.string.isRequired,
             html: PropTypes.string.isRequired,
@@ -52,6 +67,13 @@ export default Page
 
 export const postQuery = graphql`
     query($slug: String!) {
+        allGhostSettings {
+            edges {
+                node {
+                    title
+                }
+            }
+        }
         ghostPage(slug: { eq: $slug }) {
             ...GhostPageFields
         }

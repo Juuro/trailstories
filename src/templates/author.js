@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 
 import { Layout, PostCard, Pagination } from '../components/common'
 import { MetaData } from '../components/common/meta'
@@ -16,6 +16,7 @@ const Author = ({ data, location, pageContext }) => {
     const posts = data.allGhostPost.edges
     const twitterUrl = author.twitter ? `https://twitter.com/${author.twitter.replace(/^@/, ``)}` : null
     const facebookUrl = author.facebook ? `https://www.facebook.com/${author.facebook.replace(/^\//, ``)}` : null
+    const site = data.allGhostSettings.edges[0].node
 
     return (
         <>
@@ -24,6 +25,13 @@ const Author = ({ data, location, pageContext }) => {
                 location={location}
                 type='profile'
             />
+
+            <header>
+                <div className='viewport'>
+                    <Link to='/'>{site.title}</Link>
+                </div>
+            </header>
+
             <Layout>
                 <div className='container'>
                     <header className='author-header'>
@@ -64,6 +72,13 @@ Author.propTypes = {
             location: PropTypes.string,
             facebook: PropTypes.string,
             twitter: PropTypes.string,
+        }),
+        allGhostSettings: PropTypes.shape({
+            edges: PropTypes.shape([{
+                node: PropTypes.shape({
+                    title: PropTypes.string.isRequired,
+                }),
+            }]),
         }),
         allGhostPost: PropTypes.object.isRequired,
     }).isRequired,

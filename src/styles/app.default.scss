@@ -106,7 +106,7 @@ h6 {
     font-size: 1rem;
 }
 
-header:not(.home-head):not(.post-card-header) {
+header:not(.home-head):not(.post-card-header):not(.tag-header) {
     background-color: var(--color-dark-green);
     
     a {

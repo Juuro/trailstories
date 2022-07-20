@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 
 import { Layout, PostCard, Pagination } from '../components/common'
 import { MetaData } from '../components/common/meta'
@@ -14,6 +14,7 @@ import { MetaData } from '../components/common/meta'
 const Tag = ({ data, location, pageContext }) => {
     const tag = data.ghostTag
     const posts = data.allGhostPost.edges
+    const site = data.allGhostSettings.edges[0].node
 
     return (
         <>
@@ -22,6 +23,11 @@ const Tag = ({ data, location, pageContext }) => {
                 location={location}
                 type='series'
             />
+            <header>
+                <div className='viewport'>
+                    <Link to='/'>{site.title}</Link>
+                </div>
+            </header>
             <Layout>
                 <div className='container'>
                     <header className='tag-header'>
@@ -43,6 +49,13 @@ const Tag = ({ data, location, pageContext }) => {
 
 Tag.propTypes = {
     data: PropTypes.shape({
+        allGhostSettings: PropTypes.shape({
+            edges: PropTypes.shape([{
+                node: PropTypes.shape({
+                    title: PropTypes.string.isRequired,
+                }),
+            }]),
+        }),
         ghostTag: PropTypes.shape({
             name: PropTypes.string.isRequired,
             description: PropTypes.string,
@@ -61,6 +74,13 @@ export const pageQuery = graphql`
     query GhostTagQuery($slug: String!, $limit: Int!, $skip: Int!) {
         ghostTag(slug: { eq: $slug }) {
             ...GhostTagFields
+        }
+        allGhostSettings {
+            edges {
+                node {
+                    title
+                }
+            }
         }
         allGhostPost(
             sort: { order: DESC, fields: [published_at] },
